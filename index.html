@@ -1,0 +1,1932 @@
+```html
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Entertainment Bazar</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+:root {
+
+    --bg-color: #0b0712;
+
+    --header-bg: #100a1c;
+
+    --card-bg: #171024;
+
+    --primary-color: #8b5cf6;
+
+    --secondary-color: #c026ff;
+
+    --accent-color: #22d3ee;
+
+    --gold-color: #f59e0b;
+
+    --text-color: #ffffff;
+
+    --muted-color: #aaa3b8;
+
+    --border-color: #2b1d40;
+}
+
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: Arial, sans-serif;
+
+}
+
+
+body {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #24103d 0%,
+            #0b0712 45%
+        );
+
+    color: var(--text-color);
+
+    padding-bottom: 100px;
+
+    min-height: 100vh;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+/* =========================================================
+   TOP BANNER
+========================================================= */
+
+.top-red-bar {
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #8b5cf6,
+            #c026ff,
+            #7c3aed
+        );
+
+    padding: 10px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 3px 15px
+        rgba(139, 92, 246, 0.35);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.logo-section {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 15px;
+
+    background:
+        rgba(16, 10, 28, 0.96);
+
+    border-bottom:
+        1px solid var(--border-color);
+}
+
+
+.site-logo {
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+.site-logo span {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #c026ff
+        );
+
+    padding: 3px 7px;
+
+    border-radius: 5px;
+
+    margin-right: 5px;
+
+    box-shadow:
+        0 0 12px
+        rgba(192, 38, 255, 0.35);
+}
+
+
+.search-top-btn {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #c026ff
+        );
+
+    border: none;
+
+    color: white;
+
+    padding: 7px 15px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 12px
+        rgba(139, 92, 246, 0.3);
+}
+
+
+/* =========================================================
+   TOP POPUP
+========================================================= */
+
+.top-popup-box {
+
+    position: fixed;
+
+    top: 62px;
+
+    left: 5%;
+
+    width: 90%;
+
+    max-width: 450px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #251044,
+            #160b28
+        );
+
+    border:
+        1px solid #7c3aed;
+
+    border-radius: 18px;
+
+    padding: 12px 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.65),
+        0 0 20px rgba(139,92,246,0.18);
+
+    z-index: 99999;
+
+    animation:
+        slideDown 0.3s ease-out;
+}
+
+
+@keyframes slideDown {
+
+    from {
+
+        transform:
+            translateY(-30px);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform:
+            translateY(0);
+
+        opacity: 1;
+    }
+
+}
+
+
+.popup-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex: 1;
+}
+
+
+.popup-avatar {
+
+    width: 42px;
+
+    height: 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c026ff,
+            #7c3aed
+        );
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 22px;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 0 15px
+        rgba(192,38,255,0.4);
+}
+
+
+.popup-text {
+
+    color: #fff;
+}
+
+
+.popup-text h4 {
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+
+    font-weight: bold;
+}
+
+
+.popup-text p {
+
+    font-size: 11px;
+
+    color: #c4b5fd;
+}
+
+
+.popup-right {
+
+    display: flex;
+
+    align-items: center;
+
+    position: relative;
+
+    margin-left: 8px;
+}
+
+
+.forward-btn {
+
+    background: #ffffff;
+
+    color: #6d28d9;
+
+    border: none;
+
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0,0,0,0.3);
+}
+
+
+.close-popup-x {
+
+    position: absolute;
+
+    top: -23px;
+
+    right: 2px;
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+
+.close-popup-x:hover {
+
+    color: #c026ff;
+
+}
+
+
+/* =========================================================
+   DATE BANNER
+========================================================= */
+
+.date-banner {
+
+    background:
+        linear-gradient(
+            90deg,
+            #6d28d9,
+            #8b5cf6,
+            #c026ff
+        );
+
+    padding: 9px 15px;
+
+    font-weight: bold;
+
+    margin: 15px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 4px 15px
+        rgba(139,92,246,0.22);
+}
+
+
+.date-number {
+
+    background: #ffffff;
+
+    color: #7c3aed;
+
+    width: 24px;
+
+    height: 24px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 0 10px;
+}
+
+
+/* =========================================================
+   IMAGE GRID
+========================================================= */
+
+.image-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 10px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card-link {
+
+    display: block;
+
+}
+
+
+.card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #1b1129,
+            #130c1e
+        );
+
+    border-radius: 9px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    border:
+        1px solid var(--border-color);
+
+    padding-bottom: 10px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(139,92,246,0.25);
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge-container {
+
+    position: absolute;
+
+    top: 8px;
+
+    left: 8px;
+
+    right: 8px;
+
+    z-index: 5;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+
+.badge-hd {
+
+    background: #06b6d4;
+
+    color: #ffffff;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 2px 8px
+        rgba(6,182,212,0.4);
+}
+
+
+.badge-premium {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #f97316
+        );
+
+    color: #ffffff;
+
+    padding: 3px 7px;
+
+    border-radius: 4px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 2px 8px
+        rgba(249,115,22,0.4);
+}
+
+
+/* =========================================================
+   VIDEO THUMBNAIL
+========================================================= */
+
+.video-thumbnail-wrapper {
+
+    width: 100%;
+
+    height: 150px;
+
+    background: #241b30;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+.video-thumbnail-wrapper img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.play-btn {
+
+    width: 42px;
+
+    height: 42px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #c026ff
+        );
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 3;
+
+    box-shadow:
+        0 0 20px
+        rgba(192,38,255,0.6);
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.card-title {
+
+    padding:
+        8px 7px 0;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+    color: #f5f3ff;
+}
+
+
+/* =========================================================
+   BOTTOM NAV
+========================================================= */
+
+.bottom-nav {
+
+    position: fixed;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    background:
+        rgba(12,7,18,0.97);
+
+    backdrop-filter:
+        blur(10px);
+
+    display: flex;
+
+    justify-content:
+        space-around;
+
+    align-items: flex-end;
+
+    padding:
+        8px 0 12px;
+
+    border-top:
+        1px solid #2b1d40;
+
+    z-index: 999;
+}
+
+
+.nav-item {
+
+    text-decoration: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    flex: 1;
+
+    position: relative;
+}
+
+
+.nav-item span {
+
+    margin-top: 5px;
+
+    color: #aaa3b8;
+}
+
+
+.nav-item.file-active span {
+
+    color: #c026ff;
+}
+
+
+.nav-icon {
+
+    font-size: 25px;
+}
+
+
+.nav-item.home-center {
+
+    margin-top: -20px;
+}
+
+
+.home-circle {
+
+    width: 60px;
+
+    height: 60px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #c026ff
+        );
+
+    border-radius: 50%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 30px;
+
+    border:
+        4px solid #0b0712;
+
+    box-shadow:
+        0 0 25px
+        rgba(192,38,255,0.5);
+}
+
+
+.badge-count {
+
+    position: absolute;
+
+    top: -4px;
+
+    right: 25%;
+
+    background: #c026ff;
+
+    color: white;
+
+    font-size: 10px;
+
+    padding: 2px 5px;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .site-logo {
+
+        font-size: 17px;
+
+    }
+
+    .search-top-btn {
+
+        padding:
+            6px 11px;
+
+        font-size: 11px;
+
+    }
+
+    .video-thumbnail-wrapper {
+
+        height: 135px;
+
+    }
+
+    .card-title {
+
+        font-size: 11px;
+
+    }
+
+    .popup-text h4 {
+
+        font-size: 12px;
+
+    }
+
+    .popup-text p {
+
+        font-size: 10px;
+
+    }
+
+    .forward-btn {
+
+        padding:
+            7px 11px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     TOP BANNER
+========================================================= -->
+
+<div class="top-red-bar">
+
+    ✨ Entertainment Bazar — সেরা ভিডিও কালেকশন ✨
+
+</div>
+
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div class="logo-section">
+
+    <div class="site-logo">
+
+        <span>Entertainment</span>Bazar
+
+    </div>
+
+
+    <button class="search-top-btn">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        খুঁজুন
+
+    </button>
+
+</div>
+
+
+<!-- =========================================================
+     POPUP 1
+========================================================= -->
+
+<div class="top-popup-box" id="topPopup1">
+
+    <div class="popup-left">
+
+        <div class="popup-avatar">
+            👩
+        </div>
+
+        <div class="popup-text">
+
+            <h4>
+                Sexy Shila
+            </h4>
+
+            <p>
+                আমার সাথে ভিডিও কলে চ্যাট করুন
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="popup-right">
+
+        <span
+            class="close-popup-x"
+            onclick="closeTopPopup('topPopup1')">
+
+            &times;
+
+        </span>
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="forward-btn">
+
+            এগিয়ে যান
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     POPUP 2
+========================================================= -->
+
+<div
+    class="top-popup-box"
+    id="topPopup2"
+    style="display:none; background:linear-gradient(135deg,#3b0764,#581c87);">
+
+
+    <div class="popup-left">
+
+        <div
+            class="popup-avatar"
+            style="background:#f59e0b;">
+
+            🎁
+
+        </div>
+
+
+        <div class="popup-text">
+
+            <h4>
+                অভিনন্দন! আপনি ১০ হাজার টাকা বোনাস পেয়েছেন
+            </h4>
+
+            <p>
+                আমাদের গ্রুপে যুক্ত হয়ে বোনাস নিন!
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="popup-right">
+
+        <span
+            class="close-popup-x"
+            onclick="closeTopPopup('topPopup2')">
+
+            &times;
+
+        </span>
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="forward-btn">
+
+            এগিয়ে যান
+
+        </a>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     SECTION 1 — TODAY NEW
+========================================================= -->
+
+<div class="date-banner">
+
+    <div class="date-number">
+        1
+    </div>
+
+    <span>
+        • Today New
+    </span>
+
+</div>
+
+
+<main class="main-content">
+
+    <div class="image-grid">
+
+
+        <!-- PIC 10 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic1.jpeg"
+                        alt="Video 1">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                
+**সুমাইয়া সাইয়েদের ভাইরাল ভিডিও 🔥 | মুহূর্তেই নেটদুনিয়ায় তোলপাড়!**
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic2.jpeg"
+                        alt="Video 2">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+       
+সুমাইয়া সাইয়েদের এই ভিডিওটি কেন এত ভাইরাল? 😮 দেখলেই বুঝবেন!**
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic3.jpeg"
+                        alt="Video 3">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+               
+**এই মুহূর্তে ট্রেন্ডিং 🔥 সুমাইয়া সাইয়েদের ভাইরাল ভিডিও | পুরো ভিডিও দেখুন!**
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PIC 12 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic4.jpeg"
+                        alt="Video 4">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                    সুমাইয়া সাইয়েদের ভাইরাল ভিডিও 🔥 দেখার পর মাথা ঘুরে যাবে! 😱
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic5.jpeg"
+                        alt="Video 5">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+               সুমাইয়া সাইয়েদের ভাইরাল মুহূর্ত 😳🔥 ভিডিওটা দেখে নেটিজেনদের চোখ কপালে! 👀
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+
+
+<!-- =========================================================
+     SECTION 2 — 20.08.26
+     5 PICTURES
+========================================================= -->
+
+<div class="date-banner">
+
+    <div class="date-number">
+        2
+    </div>
+
+    <span>
+        • 20.08.26 NEW COLLECTION
+    </span>
+
+</div>
+
+
+<main class="main-content">
+
+    <div class="image-grid">
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic6.jpeg"
+                        alt="Video 1">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                    নতুন ভিডিও কালেকশন 
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PIC 10 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic7.jpeg"
+                        alt="Video 2">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                            লাইভে এসে সব কিছু উজার করে দিল ♥
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic8.jpeg"
+                        alt="Video 3">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                    আরোহী মিমের ভাইরাল ভিডিও 😳🔥 এমন কিছু মুহূর্ত, যা নিয়ে নেটপাড়ায় তুমুল আলোচনা! 👀
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic9.jpeg"
+                        alt="Video 4">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                  🔥 Hot Viral Video Collection 😳 নেটদুনিয়ার আলোচিত মুহূর্তগুলো
+                </div>
+
+            </div>
+
+        </a>
+
+
+      
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic10.jpeg"
+                        alt="Video 5">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+                     সুযোগ পেয়ে গাড়ির ভিতরেই কাজ সারলো🥵
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     SECTION 3 — 14.07.26
+     3 PICTURES
+========================================================= -->
+
+<div class="date-banner">
+
+    <div class="date-number">
+        3
+    </div>
+
+    <span>
+        • 14.07.26 NEW COLLECTION
+    </span>
+
+</div>
+
+
+<main class="main-content">
+
+    <div class="image-grid">
+
+
+        <!-- PIC 5 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic11.jpeg"
+                        alt="Video 1">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+
+           🔥 এই ভিডিওটাই এখন নেটদুনিয়ার আলোচনায়! 😳 একবার দেখে নিন 👀
+
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PIC 8 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic12.jpeg"
+                        alt="Video 2">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+
+                 😳 ভিডিওটা দেখলে মাথা নষ্ট হয়ে যাবে! 🔥 এমন দৃশ্য আগে দেখেছেন? 👀
+
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- PIC 7 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic13.jpeg"
+                        alt="Video 3">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+
+               😳 এই ভিডিওটা দেখলে চোখ সরাতে পারবেন না! 🔥 শেষ পর্যন্ত দেখুন 👀
+
+
+                </div>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     SECTION 4 — 13.07.26
+========================================================= -->
+
+<div class="date-banner">
+
+    <div class="date-number">
+        4
+    </div>
+
+    <span>
+        • 13.07.26
+    </span>
+
+</div>
+
+
+<main class="main-content">
+
+    <div class="image-grid">
+
+
+        <!-- PIC 2 -->
+
+        <a
+            href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+            class="card-link">
+
+            <div class="card">
+
+
+                <div class="badge-container">
+
+                    <span class="badge-hd">
+                        HD
+                    </span>
+
+                    <span class="badge-premium">
+                        PREMIUM
+                    </span>
+
+                </div>
+
+
+                <div class="video-thumbnail-wrapper">
+
+                    <img
+                        src="pic14.jpeg"
+                        alt="Video">
+
+                    <div class="play-btn">
+
+                        <i class="fa-solid fa-play"></i>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-title">
+
+                    😈 যত পার চুষে খা! 🔥
+
+                </div>
+
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     BOTTOM NAVIGATION
+========================================================= -->
+
+<nav class="bottom-nav">
+
+
+    <!-- FILE -->
+
+    <a
+        href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+        class="nav-item file-active">
+
+        <span class="nav-icon">
+            📁
+        </span>
+
+        <span>
+            ফাইল
+        </span>
+
+    </a>
+
+
+    <!-- NEW -->
+
+    <a
+        href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+        class="nav-item">
+
+        <span class="nav-icon">
+            🎬
+        </span>
+
+        <span>
+            নতুন
+        </span>
+
+    </a>
+
+
+    <!-- HOME -->
+
+    <a
+        href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+        class="nav-item home-center">
+
+        <div class="home-circle">
+            🏠
+        </div>
+
+    </a>
+
+
+    <!-- TREND -->
+
+    <a
+        href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+        class="nav-item">
+
+        <div class="badge-count">
+            4
+        </div>
+
+        <span class="nav-icon">
+            📷
+        </span>
+
+        <span>
+            ট্রেন্ড
+        </span>
+
+    </a>
+
+
+    <!-- SEARCH -->
+
+    <a
+        href="https://www.effectivecpmnetwork.com/e26jxv03k?key=aad1548c6b15f306fd185b2940ef00d2"
+        class="nav-item">
+
+        <span class="nav-icon">
+            🔍
+        </span>
+
+        <span>
+            খুঁজুন
+        </span>
+
+    </a>
+
+
+</nav>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+function closeTopPopup(popupId) {
+
+    document
+        .getElementById(popupId)
+        .style.display = 'none';
+
+
+    /* প্রথম popup বন্ধ হলে
+       0.2 second পরে দ্বিতীয় popup */
+
+    if (popupId === 'topPopup1') {
+
+        setTimeout(function() {
+
+            document
+                .getElementById('topPopup2')
+                .style.display = 'flex';
+
+        }, 500);
+
+    }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
+```
