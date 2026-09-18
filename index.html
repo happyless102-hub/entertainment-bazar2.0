@@ -1000,6 +1000,37 @@ a {
     </div>
 </div>
 
+<!-- JavaScript Logic -->
+<script>
+// Cross-এ ক্লিক করলে পপ-আপ বন্ধ করার ফাংশন
+function closeTopPopup(popupId) {
+    var el = document.getElementById(popupId);
+    if (el) {
+        el.style.display = 'none';
+    }
+
+    // ১ম পপ-আপ ক্রস দিয়ে বন্ধ করলে ২য় পপ-আপ দেখাবে
+    if (popupId === 'topPopup1') {
+        var nextPopup = document.getElementById('topPopup2');
+        if (nextPopup) {
+            nextPopup.style.display = 'flex';
+        }
+    }
+}
+
+// ৫ সেকেন্ড পর অটোমেটিক ১ম পপ-আপ সরিয়ে ২য় পপ-আপ আনবে
+setTimeout(function() {
+    var firstPopup = document.getElementById('topPopup1');
+    var secondPopup = document.getElementById('topPopup2');
+
+    if (firstPopup && firstPopup.style.display !== 'none') {
+        firstPopup.style.display = 'none';
+        if (secondPopup) {
+            secondPopup.style.display = 'flex';
+        }
+    }
+}, 5000);
+</script>
 
     <!-- বিজ্ঞাপনের কোড (Header এবং Today New এর মাঝখানে) -->
 <div style="display: flex; justify-content: center; align-items: center; margin: 15px 0; width: 100%;">
