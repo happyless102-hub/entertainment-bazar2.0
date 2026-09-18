@@ -2236,38 +2236,6 @@ a {
 </nav>
 
 
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
-<script>
-    <script>
-function closeTopPopup(popupId) {
-    var el = document.getElementById(popupId);
-    if (el) {
-        el.style.display = 'none';
-    }
-
-    if (popupId === 'topPopup1') {
-        setTimeout(function() {
-            var nextPopup = document.getElementById('topPopup2');
-            if (nextPopup) {
-                nextPopup.style.display = 'flex';
-            }
-        }, 500);
-    }
-}
-
-function hideAd() {
-    var ad = document.getElementById('sticky-ad-container');
-    if (ad) {
-        ad.style.display = 'none';
-    }
-}
-
-// setTimeout(hideAd, 10000); <-- এই লাইনটি বাদ দেওয়া হয়েছে, তাই অ্যাড আর অটোমেটিক কাটবে না।
-</script>
-
 function closeTopPopup(popupId) {
 
     document
