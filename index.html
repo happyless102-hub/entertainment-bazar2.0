@@ -2235,33 +2235,6 @@ a {
 
 </nav>
 
-
-function closeTopPopup(popupId) {
-
-    document
-        .getElementById(popupId)
-        .style.display = 'none';
-
-
-    /* প্রথম popup বন্ধ হলে
-       0.2 second পরে দ্বিতীয় popup */
-
-    if (popupId === 'topPopup1') {
-
-        setTimeout(function() {
-
-            document
-                .getElementById('topPopup2')
-                .style.display = 'flex';
-
-        }, 500);
-
-    }
-
-}
-
-</script>
-
 </div>
 </body>
 
